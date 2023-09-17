@@ -1,0 +1,96 @@
+/*
+    CSS structure has 3 parts:
+    [selector] {
+        property: value;
+    }
+
+    selector:
+    - Universal selector *
+    - Type selector e.g. div 
+    - Class selector e.g. .class
+    - ID selector e.g. #id
+    - Attribute selector e.g. [attribute="value"]
+    - Combinators 
+        - Descendent: all .b inside .a
+            e.g. .a .b
+        - Child: all .b which are direct childs of .a
+            e.g. .a > .b
+        - Adjacent sibling: .b that follows immediately after .a
+            e.g. .a + .b
+        - General sibling: all sibling .b that follow after .a 
+            e.g. .a ~ .b 
+    - Pseudo classes 
+        - :first-child (first and last element in its container
+        - :last-child 
+
+        - button:hover (button over which the user's pointer is hovering 
+
+        - input:focus (input which received focus)
+
+        - a:visited (links that user already visited)
+
+    - Pseudo element 
+        - ::first-letter
+        - ::after
+
+    - Cascade 
+        - css always take the last define one (overwrite the style previously defined but only for equal power selector)
+
+    - Inheritance 
+        - inheriting values from parents (don't need to write rule for every element)
+    
+    - Specificity 
+        - specificity of each selector decide which value should be used (choose the highest specificity)
+        X-0-0-0: inline styles (highest)
+        0-N-0-0: # of id selectors (#id)
+        0-0-N-0: # of class selectors (.class)
+        0-0-0-N: # of type selectors (html-tag)
+        (Also the one with the most selector win for id, class and type)
+            e.g. .class1.class2 (0020) vs #id.class2 (0110 win!)
+
+        - important rule (!important)
+            - AVOID (overwriting all the specificity rules!)
+
+
+    Most IMP 
+        inline!important 
+        id!important
+        class!important 
+        tag!important
+        inline
+        id
+        class
+        tag
+    Least IMP
+*/
+
+/* Class selector */
+.purpletext {
+    color: purple;
+    font-size: 20px;
+}
+
+/* type selector */
+a {
+    color: blue;
+    font-weight: 600;
+}
+
+a:visited {
+    color: rebeccapurple;
+}
+
+a:hover {
+    color: green;
+}
+
+/* ID selector */
+#greentext {
+    color: indianred;
+    font-weight: 600;
+}
+
+input[type="radio"] {
+    width: 10px;
+    height: 10px;
+}

@@ -1,0 +1,49 @@
+<!-- Z index  
+    - only work on element with position other than static -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Z index</title>
+        <style type="text/css">
+            body {
+                font: normal bold 2em Arial;
+            }
+            .box {
+                width: 300px;
+                height: 300px;
+                padding: 10px;
+            }
+            .red {
+                background: red;
+            }
+            .blue {
+                background: blue;
+                position: absolute;
+                top: 50px;
+                left: 50px;
+                z-index: -1;
+            }
+            .orange {
+                background: orange;
+                position: absolute;
+                top: 50px;
+                left: 100px;
+                z-index: -1;
+            }
+            .purple {
+                background: purple;
+                position: absolute;
+                top: 50px;
+                left: 150px;
+                z-index: -1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box red">A</div>
+        <div class="box blue">B</div>
+        <div class="box orange">C</div>
+        <div class="box purple">D</div>
+    </body>
+</html>

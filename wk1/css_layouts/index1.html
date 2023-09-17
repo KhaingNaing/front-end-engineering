@@ -1,0 +1,50 @@
+<!--
+    Flexbox:
+        defines layout where children could be positioned in any direction and change their size based on the available space
+    KEY: always use display: flex on parent element 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css flexbox</title>
+        <!-- css style -->
+        <style>
+            .container {
+                display: flex;
+                /* flex-direction: row;
+                flex-wrap: wrap; */
+                flex-flow: row wrap;
+                justify-content: flex-start;
+                align-items: flex-start;    /* calculate the height based on the inner element */
+                height: 500px;
+                background-color: purple;
+
+                align-content: flex-start;
+            }
+
+            .box {
+                background-color: orange;
+                flex: 1;/* width: 50px; */
+                text-align: center;
+                padding: 5px;
+            }
+            .small {
+                flex: 1;
+            }
+            .large {
+                flex: 3;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="box" style="width: 50px; background-color: green; order: 1;">A</div>
+            <div class="box small">B</div>
+            <div class="box large">C</div>
+            <div class="box small">D</div>
+            <div class="box small">E</div>
+            <div class="box small">F</div>
+
+        </div>
+    </body>
+</html>

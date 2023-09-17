@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>🖼️HTML image</title>
+    </head>
+    <body>
+        
+    </body>
+</html>
+
+<!--
+    IMP: 
+        Base64 Encoding:
+            Instead of loading an image as a resource via http, directly encode the image into the page of API response.
+            Pros: reduces subsequent load time (#http_connections required)
+            Cons: increases initial load time (increase overall amount of data needing to be processed)
+            - Commonly used for small images 
+
+    Two key categories: 
+    1. Vector images
+        - do not distort when enlarged
+        - e.g SVM
+
+    2. Raster images
+        - when enlarged, the origin image is stretched leading to a lower quality image
+        - BMP (variable format): no compression or uses    (called bit map)
+        - GIF (8 bit format): yes lossless compression, Use in image animations
+        - JPG (24 bit): yes lossy compression, high resolution photos
+        - PNG (16-24 bit): yes lossless compression, most non-photo use cases
+-->

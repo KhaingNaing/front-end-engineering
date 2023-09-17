@@ -1,0 +1,24 @@
+<!-- 
+    The entire page has a default font size 
+    - rem mean relative globally 
+    - em is globally times whatever that is relevant to the parent 
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css font</title>
+        <style type="text/css">
+            @font-face {
+                font-family: 'Babylonica';
+                src: url('Babylonica-Regular.ttf');
+            }
+            .my-text {
+                font: normal normal 3rem "Babylonica";
+            }
+        </style>
+    </head>
+    <body>
+        <span class="my-text">Hey I am a font!</span>
+    </body>
+</html>
+

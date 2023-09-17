@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>html SVG</title>
+        <style type="text/css">
+            body {
+                /* font: style variant weight size family*/
+                font: normal bold 20px Arial;
+            }
+            .container {
+                display: flex;
+                flex-flow: row wrap;
+                padding: 25px;
+            }
+            .container div {
+                /* margin: top&bottom right&left */
+                margin: 0px 25px;
+            }
+            p {
+                text-align: center;
+                /* margin: top right&left bottom */
+                margin: 50px 0 10px;
+            }
+            svg {
+                /* outline is a line drawn around element (outside the border)
+                    outline: style color width offset */
+                outline: 1px ridge black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>SVG shapes:</h1> 
+
+        <div class="container">
+            <br>
+            <div>
+                <p>Line</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <line x1="20" y1="20" x2="80" y2="80" stroke="black" stroke-width="2px" stroke-linecap="round"/>
+                </svg>
+            </div>
+            <div>
+                <p>Circle</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <circle cx="50" cy="50" r="30" fill="yellow" stroke-width="1px" stroke="black" />
+                </svg>
+            </div>
+            <div>
+                <p>Ellipse</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <ellipse cx="50" cy="50" rx="25" ry="40" fill="yellow" stroke-width="1px" stroke="black"/>
+                </svg>
+            </div>
+            <div>
+                <p>Rectangle</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <rect x="20" y="30" width="60" height="40" fill="yellow" stroke-width="1px" stroke="black"/>
+                </svg>
+            </div>
+            <div>
+                <p>Rectangle with rounded corner</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <rect x="20" y="30" width="60" height="40" rx="4" ry="4" fill="yellow" stroke-width="1px" stroke="black"/>
+                </svg>
+            </div>
+        </div>
+        <h1>SVG path</h1>
+        <div class="container">
+            <div>
+                <p>Absolute path</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <path d="M10 10 L10 90 L90 10 Z" fill="yellow" stroke="black" stroke-width="1px"/>
+                </svg>
+            </div>
+            <div>
+                <p>Relative path</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <path d="M10 10 l0 +80 l+80 -80 Z" fill="yellow" stroke="black" stroke-width="1px"/>
+                </svg>
+            </div>
+            <div>
+                <p>Bringing it altog :D</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <circle cx="50" cy="50" r="45" fill="yellow"/>
+                    <ellipse cx="35" cy="38" rx="5" ry="8" fill="black"></ellipse>
+                    <ellipse cx="65" cy="38" rx="5" ry="8" fill="black"></ellipse>
+                    <path d="M25 55 l50 0 a10 8 0 1 1 -50 0 Z" />
+                </svg>
+            </div>
+            <div>
+                <p>Bringing it altog D:</p>
+                <svg viewBox="0 0 100 100" width="300" height="300">
+                    <circle cx="50" cy="50" r="45" fill="yellow"/>
+                    <ellipse cx="35" cy="38" rx="5" ry="8" fill="black"></ellipse>
+                    <ellipse cx="65" cy="38" rx="5" ry="8" fill="black"></ellipse>
+                    <path d="M25 70 l50 0 a10 8 0 0 0 -50 0 Z" />
+                </svg>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!-- 
+    HTML SVGs
+    - Raster Graphics
+        - Composed of pixels on a grid, where each pixel is assigned a color value
+        - Resolution-dependent (degrade quality when enlarged)
+        - e.g. png, jpg, gif 
+    - Vector Graphics
+        - Small graphics that use math to display images (doesn't rely on pixel)
+        - Can be enlarged without losing quality 
+        - e.g. pdf, ai, svg
+
+    What is in an SVG?
+    <svg viewbox="0 0 100 100" width="100" height="100">
+        <path .../>
+        <circle ../>
+        <line .../>
+    </svg>
+    - Top-left coordinate system (expressed as x, y)
+    - Viewbox - the visible region of the svg
+    - Collection of paths and vector shapes, which define the SVG's contents
+
+    SVG line:
+        start & end pt: x1 y1 x2 y2 
+        styling: 
+            - stroke for line color (must specified)
+            - stroke-width for line thickness
+            - stroke-linecap for round or square endpoint 
+    SVG circle: 
+        center pt & radius: cx cy r
+        styling 
+            - fill for color filled-in
+            - stroke for outline color 
+            - stroke-width for line thickness
+    SVG ellipse:
+        center pt & x-radius & y-radius: cx cy rx ry
+        styling 
+            - fill for color filled-in
+            - stroke for outline color 
+            - stroke-width for line thickness
+    SVG rect:
+        origin pt & width & height & edge roundness: x y width height rx ry
+        styling 
+            - fill for color filled-in
+            - stroke for outline color 
+            - stroke-width for line thickness
+
+    SVG path:
+        Any generic shape can be defined by svg path. Think of giving commands to someone to draw (Path Command can be Absolute & relative path).
+        - see w3 school for SVG path commands 
+        Common styling: 
+            - fill for color filled-in
+            - stroke for outline color 
+            - stroke-width for line thickness
+        Open with: Mx y
+        Close with: Z
+-->

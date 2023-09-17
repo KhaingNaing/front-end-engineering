@@ -1,0 +1,105 @@
+/* box model (margin, border, margin) only work on block element such as div */
+/* div => box elements, 
+   span => inline elements (they don't care about layout
+   
+   div { display: block; }
+   span { display: inline } */
+.box {
+    width: 200px;
+    height: 70px;
+    background-color: pink;
+    color: purple;
+
+    /* size style color */
+    border: 1px solid black;
+
+    padding: 10px;
+    margin: 20px;
+}
+
+.text {
+    width: 200px;
+    height: 200px;
+    background: yellow;
+    margin: 5px;
+    display: inline-block;
+}
+
+.hide {
+    display: none; /* invisible (hide the element)
+    visibility: hidden; you know something there but cannot see it (since you see the space that the element is supposed to be there) */
+}
+
+/* AVOID using float */
+/* put element to left/right of the container & allows other inline elements to wrap around it */
+.sidebar {
+    width: 50px;
+    height: 400px;
+    background-color: blue;
+
+    float: left;
+    margin: 10px;
+}
+
+/*
+    4 diff position
+    - static (default)
+        - position based on the normal flow (offset has no effect on it)
+    - relative
+        - position based on the normal flow but can offset it based on the default position (don't have knowledge about parent pos)
+    - absolute
+        - removes element from the normal flow and position by offset based on closest parent element (not the default static pos)
+        - note! will find closest parent with relative position 
+    - fixed 
+        - removes element from the normal flow and fix it on the screen (offset doesn't apply)
+*/
+.outer {
+    width: 300px;
+    height: 300px;
+    background: yellow;
+    position: relative;
+}
+.inner {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.outer > .left {
+    background-color: green;
+    left: 10px;
+}
+.outer > .right {
+    background-color: purple;
+    right:10px;
+}
+
+.pop-up {
+    /*  padding: top right bottom left
+        padding: top/bottom left/right */
+    padding-top: 10px 0 0 0;
+    width: 200px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    position: fixed;
+    z-index: 9;
+
+    top: 50px;
+    left: calc(50% - 100px); /* centering */
+    /* margin: 0 auto; centering */
+}
+
+/* 
+    Overflow (sets how element will show its content when overflows)
+    - visible (default)
+        - content will be rendered outside the edge 
+    - hidden 
+        - hide the content outside the edges (doesn't allow to scroll)
+    - auto
+        - hide the content outside the edges but allows scrolling to the hidden content
+    - scroll
+        - hide the content outside the edges. Always show scorllbars even when content fits
+*/
