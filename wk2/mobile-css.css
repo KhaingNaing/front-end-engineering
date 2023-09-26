@@ -1,0 +1,86 @@
+Responsive Website 
+- Media queries (if statement in css)
+  /* make sure to put media queries after the default style to avoid overwrite */
+  .article {
+    padding: 5px 10px;
+  }
+  /* changes apply to browser larger than 600px */
+  @media (min-width> 600px) {
+    .article {
+        padding: 10px 20px;
+    }
+  }
+
+Conditions that can be used in if statement 
+- Media Types 
+    // All the devices 
+    @media all { ... }
+
+    // Print mode
+    @media print { ... }
+
+    // Screen devices 
+    @media screen { ... }
+
+    // Speech synthesizers 
+    @media speech { ... }
+
+- Media Features 
+    // 500px and narrower (e.g. a phone)
+    @media (max-width: 500px) { ... }
+
+    // 501px and wider 
+    @media (min-width: 501px) { ... }
+
+    // Primary input can hover 
+    @media (hover: :hover) { ... }
+
+    // Dark mode preference 
+    @media (prefers-color-scheme: dark) { ... }
+
+***************************************************
+- Multiple criteria 
+@media screen 
+  and (min-width: 320px)
+  and (orientation: portrait) {
+    ...
+}
+
+- Negate query (apply to the whole condition)
+// Invert the whole media query 
+@media not screen 
+  and (min-width: 320px)
+  and (orientation: portrait) {
+    ...
+}
+
+- Combine query
+// Applied to both print mode and screen with width >= 320
+@media print, screen 
+  and (min-width: 320px) {
+    ...
+}
+
+***************************************************
+Viewport 
+- current viewed area of the page
+- in css px
+- mobile viewport not always equal to the size of the device by default
+  (It is wider than the screen and renders zoomed out)
+
+Viewport Meta Tag 
+- control the size and scale of the viewport by meta tag 
+
+// sets viewport size to the actual screen size of the device 
+<meta 
+    name="viewport"
+    content="width=device-width"
+>
+
+// Controls the zoom of the page 
+<meta 
+    name="viewport"
+    content="initial-scale=1, maximum-scale=2"
+>
+
+Viewport units: viewport width (vw), viewport height (vh)
