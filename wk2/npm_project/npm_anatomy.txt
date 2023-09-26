@@ -1,0 +1,13 @@
+The structure of NPM involves a few key files and folders.
+
+- package.json
+where meta data about the project is stored, include a list of dependencies to install
+*changes always committed to git*
+
+- package-lock.json
+where version information about dependencies is stored, to ensure everyone has the right versions
+*changes always committed to git*
+
+- node_modules/
+where the dependencies are installed locally
+*changes are NEVER committed to git*

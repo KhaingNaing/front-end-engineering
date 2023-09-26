@@ -1,0 +1,29 @@
+NPM:
+    - a package management system for js applications
+    - allows installing dependencies from the web 
+
+npm install 
+    - install new dependencies
+npm start 
+    - start applications
+package.json
+    - file that contains metadata about your application and exists in root dir 
+    - semantic versioning 
+        - specification of your package's current version 
+        - Major: change in major ver means you changed the API in a breaking way
+        - Minor: change in minor means you added functions in a backwards compatible manner
+        - Patch: change in patch means you made backwards compatible bug fixes
+dependency types
+    - dependency: modules required by app to run (e.g. react)
+    - devDependencies: modules required during development but not for run (e.g. jest)
+    - peerDependencies
+    - optionalDependencies
+scripts
+    - allows to specify command line scripts to run with npm
+
+Yarn:
+    - alternative to NPM (released by facebook and has a few adv)
+    - significantly faster
+    - used deterministic install algorithm
+    - used lockfiles which record exact versions of each dependency that has been installed
+    
