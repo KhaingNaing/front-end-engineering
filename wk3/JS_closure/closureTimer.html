@@ -1,0 +1,74 @@
+<!-- create a new additional timer everytime createTimer button is pressed -->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button id="createTimer">Create Timer</button>
+        <div id="timers"></div>
+    </body>
+
+    <script type="text/javascript">
+
+        // closure function 
+        const createTimer = () => {
+            let time = 0;
+            // return a dict of innerFunc's getTime and incTime
+            return {
+                getTime: () => {
+                    return time;
+                },
+                incTime: () => {
+                    time++;
+                },
+                reset: () => {
+                    time = 0;
+                },
+            }
+        }
+
+        // only closure (no list)
+        // const createTimerBtn = document.getElementById("createTimer");
+
+        // createTimerBtn.addEventListener('click', () => {
+        //     // currTimer holds a reference to funtions{getTime, incTime}
+        //     const currTimer = createTimer();
+
+        //     const newTimer = document.createElement('div');
+        //     const updateText = () => newTimer.innerText = currTimer.getTime();
+        //     updateText();
+        //     setInterval(() => {
+        //         // increment the timer
+        //         currTimer.incTime();
+        //         // update the DOM text
+        //         updateText();
+        //     }, 1000);
+        //     document.getElementById('timers').appendChild(newTimer);
+        //     console.log('Clicked!');
+        // })
+
+        // combined idea of closure with list
+        const createTimerBtn = document.getElementById("createTimer");
+        const times = [];
+        createTimerBtn.addEventListener('click', () => {
+            // create a timer and push to the list
+            const currTimer = createTimer();
+            times.push(currTimer);
+
+            const newTimer = document.createElement('div');
+            const updateText = () => newTimer.innerText = currTimer.getTime();
+            updateText();
+            setInterval(() => {
+                currTimer.incTime();
+                updateText();
+            }, 1000);
+            document.getElementById('timers').appendChild(newTimer);
+        })
+
+        setInterval(() => {
+            times.forEach(time => {
+                time.reset();
+            })
+        }, 5000);
+    </script>
+</html>
+

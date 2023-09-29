@@ -1,0 +1,59 @@
+What is an Event?
+- signal that a thing has happened to a DOM element
+    - thing could be:
+        Mouse events (click, dblclick, mouseup, mousedown, mouseenter, mouseleave)
+        Keyboard events (keydown, keypress, keyup)
+        more! (submit, load, error etc)
+- can use events to run js code in response to user actions
+
+Event handlers
+    User interacts with page => event occurs => piece of JS code is run
+
+Ways to Adding Event Handler 
+1) in html
+    <input 
+        value='Click me'
+        onclick="alert('Clicked!')"
+        type="button"
+    >
+2) DOM Property 
+    let element = document.getElementById('btn');
+    // onclick is a callback function 
+    element.onclick = () => {
+        alert('Button was clicked!');
+    };
+3) addEventListener
+    target.addEventListener(
+        type,       // e.g. 'click'
+        listener,   // the callback
+        [options]   // obj that specifies extra setting for event listener
+    )
+
+    e.g. 
+    let element = document.getElementById('btn');
+    let handler = () => {
+        alert('button was clicked');
+    };
+    element.addEventListener('click', handler);
+    element.removeEventListener('click', handler);
+
+Event Interface 
+The parameter to an event handler is an event obj
+- document.addEventListener('mousemove', (event) => {
+    ...
+})
+- event obj represents the event that has taken place and has properties describing event details
+- Event interface properties:
+    - event.currentTarget       // current event handler is running on 
+    - event.timeStamp           // time the event was created (in ms)
+    - event.type                // name of the event e.g. 'click'
+    Note: diff types of events has specific properties
+
+The Event Loop
+- the event loop is a single-threaded loop which runs in the browser and manages all events
+- when an event is triggered it is added to the queue and will not run until current event is run-to-completion
+
+Event Capturing and Bubbling
+1) event capturing phase: window -> document -> elemnt ... -> target_element
+After reaching the target
+2) event bubbling phase: from target all the way back to window

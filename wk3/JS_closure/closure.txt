@@ -1,0 +1,51 @@
+What is Closure?
+- Closure means that an inner func always has access to vars & paras of its outer func even after outer func has returned
+- aka inner function can access the scope of the outer function 
+e.g. 
+function Outer() {
+    
+    var outerVar = 1;
+
+    function inner() {
+        alert(`${outerVar}`);
+    }
+
+    inner();
+}
+
+e.g. 
+function OuterFunction() {
+
+    var outerVariable = 100;
+
+    function InnerFunction() {
+        alert(outerVariable);
+    }
+
+    return InnerFunction;
+}
+var innerFunc = OuterFunction();
+
+innerFunc(); // 100
+
+- OuterFunction return InnerFunction when call()
+- var innerFnc reference the InnerFunction() only not OuterFunction()
+- so when innerFunc() is called it can still access outerVariable via InnerFunction() 
+- This is called Closure
+
+e.g. Inner keep the reference of outer variables NOT a separate copy
+function Counter() {
+    var counter = 0;
+
+    function IncreaseCounter() {
+        return counter += 1;
+    };
+
+    return IncreaseCounter;
+}
+
+var counter = Counter();
+alert(counter()); // 1
+alert(counter()); // 2
+alert(counter()); // 3
+alert(counter()); // 4

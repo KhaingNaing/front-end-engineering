@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .container {
+                display: grid;
+                grid-row-gap: 10px;
+                width: 500px;
+            }
+            form {
+                display: grid;
+                grid-row-gap: 10px;
+                width: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Create account form</h1>
+            <form name="create_account">
+                <input type="text" placeholder="Username" name="Username" />
+                <input type="date" name="date" />
+                <input type="password" name="password_1" placeholder="Please enter your password" />
+                <input type="password" name="password_2" placeholder="Confirm your password" />
+                <select name="state">
+                    <option value="NSW">NSW</option>
+                    <option value="VIC">VIC</option>
+                    <option value="QLB">QLB</option>
+                </select>
+                <input type="file" value="Upload a photo" name="photo" />
+                <input type="submit" value="submit" />
+            </form>
+        </div>
+
+        <script src="form.js"></script>
+
+    </body>
+</html>
+

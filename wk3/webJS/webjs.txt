@@ -1,0 +1,9 @@
+How code is included
+- Linking js externally
+    - improve in performance when browser cache is utilised
+    - reduces time taken for initial html to be revised 
+
+- Linking js inline
+    - avoid network requests (potentially costly) for script if file is not yet loaded 
+    - include at the bottom of the body tag normally because you want your page to render first and execute js slowly after
+    

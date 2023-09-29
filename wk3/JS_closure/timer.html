@@ -1,0 +1,42 @@
+<!-- create a new additional timer everytime createTimer button is pressed -->
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <button id="createTimer">Create Timer</button>
+        <div id="timers"></div>
+    </body>
+
+    <script type="text/javascript">
+        // create a list of timers 
+        let times = [];
+        // get btn by id
+        const createTimerBtn = document.getElementById("createTimer");
+
+        // addEvent for when button is clicked
+        createTimerBtn.addEventListener('click', () => {
+            // create a new element (div) for a new timer 
+            const newTimer = document.createElement('div');
+            times.push(0); // push to timer list
+            const index = times.length - 1 // start from timer 0; become 1 after pushing first timer thus index = 1-1 = 0
+            newTimer.innerText = times[index];
+
+            // increment the timer
+            setInterval(() => {
+                times[index]++,
+                newTimer.innerText = times[index];
+            }, 1000);
+            // append new timer to parent div timers
+            document.getElementById('timers').appendChild(newTimer);
+            console.log('Clicked!');
+        });
+
+        setInterval(() => {
+            for (let i = 0; i < times.length; i++) {
+                times[i] = 0;
+            }
+        }, 5000);
+
+    </script>
+</html>
+

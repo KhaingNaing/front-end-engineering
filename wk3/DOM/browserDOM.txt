@@ -1,0 +1,51 @@
+Reading the DOM 
+    document.getElementById(id);
+    document.getElementByTagName(name);
+    document.getElementByClassName(classname);
+
+    document.querySelector(query);
+
+Writing to DOM
+    // Create a new div element
+    let element = document.createElement("div");
+    // Create a new text node
+    let textnode = document.createTextNode("Some text");
+
+    // Adding and removing elements
+    element.appendChild(textNode)
+    element.removeChild(textNode)
+
+    // Making changes to attributes
+    button.setAttribute("disabled", "")
+
+Changing style of an element
+    // Changing element.style
+    element.style.left = "50px"; // don't forget units
+
+    // Adding 5px to the left 
+    let newLeft = parseInt(element.style.left, 10) + 5 + "px";
+    element.style.left = newLeft;
+
+    element.style.backgroundColor = "red"
+
+    // Setting computed style
+    let computedStyle = window.getComputedStyle(element, null)
+    let bgColor = computedStyle.getPropertyValue("background-color")
+
+    // Changing element.classList
+    element.classList.add("class");
+    element.classList.remove("class");
+    element.classList.toggle("class");
+    element.classList.contains("class"); // return true if class exists on element
+
+Scrolling
+    // Get the current scroll position of the page
+    console.log(window.scrollX)
+    console.log(window.scrollY)
+
+    // Scroll to a position on the page
+    window.scrollTo({
+        top: 100,
+        left: 0,
+        behavior: "smooth",
+    });
