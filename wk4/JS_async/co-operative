@@ -1,0 +1,8 @@
+Event Loop Considerations
+- the event loop runs on a single thread
+    - long running event handlers block everything else 
+    - Makes the page unresponsive 
+
+- Tips on avoiding blocking:
+    - Make sure all networking is done asynchronously 
+    - CPU intensive calculations should be pushed to a backend server to process
